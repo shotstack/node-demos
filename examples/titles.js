@@ -60,7 +60,7 @@ styles.forEach((style) => {
         .setEffect('zoomIn');
 
     start = start + length;
-    clips.push(clip)
+    clips.push(clip);
 });
 
 let track = new Shotstack.Track;
