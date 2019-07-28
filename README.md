@@ -18,7 +18,7 @@
     
 ### Installation
 
-Install the required dependencies including the [Shotstack Node SDK](https://packagist.org/packages/shotstack/shotstack-sdk-node)
+Install the required dependencies including the [Shotstack Node SDK](https://www.npmjs.com/package/shotstack-sdk)
 
 ```bash
 npm install
