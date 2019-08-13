@@ -26,9 +26,18 @@ npm install
 
 ### Set your API key
 
+The demos use the **staging** endpoint by default so use your provided **staging** key:
+
 ```bash
 export SHOTSTACK_KEY=your_key_here
 ```
+
+Windows users (Command Prompt):
+
+```bash
+set SHOTSTACK_KEY=your_key_here
+```
+
 You can [get an API key](http://shotstack.io/?utm_source=github&utm_medium=demos&utm_campaign=node_sdk) via the Shotstack web site.
 
 ### Run an example
