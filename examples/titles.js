@@ -2,7 +2,7 @@ const Shotstack = require('shotstack-sdk');
 
 const defaultClient = Shotstack.ApiClient.instance;
 const DeveloperKey = defaultClient.authentications['DeveloperKey'];
-const api = new Shotstack.DefaultApi()
+const api = new Shotstack.EndpointsApi();
 
 let apiUrl = 'https://api.shotstack.io/stage';
 
