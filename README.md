@@ -12,6 +12,10 @@
     
 - **filters.js** -
     Applies filters to a video clip, including a title with the name of the filter and a soundtrack.
+
+- **picture-in-picture.js** -
+    Layer a small forground clip using position and scale over a fullscreen background clip to create a picture 
+    in picture effect. 
     
 - **status.js** -
     Shows the status of a render task and the output video URL. Run this after running one of the render examples.
