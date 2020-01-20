@@ -14,7 +14,7 @@
     Applies filters to a video clip, including a title with the name of the filter and a soundtrack.
 
 - **picture-in-picture.js** -
-    Layer a small forground clip using position and scale over a fullscreen background clip to create a picture 
+    Layer a small foreground clip, using position and scale, over a fullscreen background clip, to create a picture 
     in picture effect. 
     
 - **status.js** -
