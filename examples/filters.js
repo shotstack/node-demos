@@ -76,7 +76,8 @@ filters.forEach((filter) => {
     let titleAsset = new Shotstack.TitleAsset;
     titleAsset
         .setText(filter)
-        .setStyle('minimal');
+        .setStyle('minimal')
+        .setSize('x-small');
 
     let titleClip = new Shotstack.Clip;
     titleClip

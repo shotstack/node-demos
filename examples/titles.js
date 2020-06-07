@@ -44,7 +44,8 @@ styles.forEach((style) => {
     let title = new Shotstack.TitleAsset;
     title
         .setStyle(style)
-        .setText(style);
+        .setText(style)
+        .setSize('small');
 
     let transition = new Shotstack.Transition;
     transition

@@ -26,7 +26,8 @@ soundtrack
 let titleAsset = new Shotstack.TitleAsset;
 titleAsset
     .setStyle('minimal')
-    .setText('Hello World');
+    .setText('Hello World')
+    .setSize('x-small');
 
 let title = new Shotstack.Clip;
 title
