@@ -26,8 +26,7 @@ const filters = [
     'darken',
     'lighten',
     'greyscale',
-    'negative',
-    'blur'
+    'negative'
 ];
 
 let videoClips = [];
