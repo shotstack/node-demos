@@ -69,7 +69,8 @@ timeline
 let output = new Shotstack.Output;
 output
     .setFormat('mp4')
-    .setResolution('sd');
+    .setResolution('sd')
+    .setFps(30);
 
 let edit = new Shotstack.Edit;
 edit
