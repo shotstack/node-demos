@@ -2,7 +2,7 @@ const Shotstack = require('shotstack-sdk');
 
 const defaultClient = Shotstack.ApiClient.instance;
 const DeveloperKey = defaultClient.authentications['DeveloperKey'];
-const api = new Shotstack.EndpointsApi();
+const api = new Shotstack.EditApi();
 const id = process.argv[2];
 
 let apiUrl = 'https://api.shotstack.io/stage';
@@ -26,7 +26,7 @@ api.getRender(id).then((data) => {
     console.log('Status: ' + status.toUpperCase() + '\n');
 
     if (status == 'done') {
-        console.log('>> Video URL: ' + url);
+        console.log('>> Asset URL: ' + url);
     } else if (status == 'failed') {
         console.log('>> Something went wrong, rendering has terminated and will not continue.');
     } else {

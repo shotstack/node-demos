@@ -18,66 +18,53 @@ if (process.env.SHOTSTACK_HOST) {
 defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SHOTSTACK_KEY;
 
-const styles = [
-    'minimal',
-    'blockbuster',
-    'vogue',
-    'sketchy',
-    'skinny',
-    'chunk',
-    'chunkLight',
-    'marker',
-    'future',
-    'subtitle'
-];
+// Border - top layer (track1)
+let borderAsset = new Shotstack.ImageAsset;
+borderAsset
+    .setSrc('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/borders/80s-acid-pink-square.png');
 
-let clips = [];
-let start = 0;
-const length = 3;
+let borderClip = new Shotstack.Clip;
+borderClip
+    .setAsset(borderAsset)
+    .setStart(0)
+    .setLength(1);
 
-let soundtrack = new Shotstack.Soundtrack;
-soundtrack
-    .setSrc('https://s3-ap-southeast-2.amazonaws.com/shotstack-assets/music/dreams.mp3')
-    .setEffect('fadeInFadeOut');
+let track1 = new Shotstack.Track;
+track1
+    .setClips([borderClip]);
 
-styles.forEach((style) => {
-    let title = new Shotstack.TitleAsset;
-    title
-        .setStyle(style)
-        .setText(style)
-        .setSize('small');
+// Background image - bottom layer (track2)
+let imageAsset = new Shotstack.ImageAsset;
+imageAsset
+    .setSrc('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/images/dolphins.jpg');
 
-    let transition = new Shotstack.Transition;
-    transition
-        .setIn('fade')
-        .setOut('fade');
+let imageClip = new Shotstack.Clip;
+imageClip
+    .setAsset(imageAsset)
+    .setStart(0)
+    .setLength(1);
 
-    let clip = new Shotstack.Clip;
-    clip
-        .setAsset(title)
-        .setStart(start)
-        .setLength(length)
-        .setTransition(transition)
-        .setEffect('zoomIn');
+let track2 = new Shotstack.Track;
+track2
+    .setClips([imageClip]);
 
-    start = start + length;
-    clips.push(clip);
-});
-
-let track = new Shotstack.Track;
-track
-    .setClips(clips);
-
+ // Put track1 first to go above track2
 let timeline = new Shotstack.Timeline;
 timeline
     .setBackground('#000000')
-    .setSoundtrack(soundtrack)
-    .setTracks([track]);
+    .setTracks([
+        track1,
+        track2
+    ]);
 
 let output = new Shotstack.Output;
 output
-    .setFormat('mp4')
-    .setResolution('sd');
+    .setFormat('jpg')
+    .setQuality('high')
+    .setSize((new Shotstack.Size)
+        .setWidth(1000)
+        .setHeight(1000)
+    );
 
 let edit = new Shotstack.Edit;
 edit
