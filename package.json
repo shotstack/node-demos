@@ -9,6 +9,6 @@
   "author": "Jeff Shillitto",
   "license": "MIT",
   "dependencies": {
-    "shotstack-sdk": "shotstack/shotstack-sdk-node.git#july-updates"
+    "shotstack-sdk": "0.0.23"
   }
 }
