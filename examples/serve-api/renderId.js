@@ -24,14 +24,12 @@ api.getAssetByRenderId(id).then((assets) => {
         const status = asset.attributes.status;
         console.log('Status: ' + status.toUpperCase() + '\n');
 
-        if (status === 'ready') {
+        if (status == 'failed') {
+            console.log('>> Something went wrong, asset could not be copied.');
+        } else {
             console.log('>> Asset CDN URL: ' + asset.attributes.url);
             console.log('>> Asset ID: ' + asset.attributes.id);
             console.log('>> Render ID: ' + asset.attributes.renderId);
-        } else if (status == 'failed') {
-            console.log('>> Something went wrong, asset could not be copied.');
-        } else {
-            console.log('>> Copying in progress, please try again in a few seconds.');
         }
     });
 }, (error) => {

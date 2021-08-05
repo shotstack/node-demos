@@ -23,14 +23,12 @@ api.getAsset(id).then((asset) => {
     const status = asset.data.attributes.status;
     console.log('Status: ' + status.toUpperCase() + '\n');
 
-    if (status === 'ready') {
+    if (status == 'failed') {
+        console.log('>> Something went wrong, asset could not be copied.');
+    } else {
         console.log('>> Asset CDN URL: ' + asset.data.attributes.url);
         console.log('>> Asset ID: ' + asset.data.attributes.id);
         console.log('>> Render ID: ' + asset.data.attributes.renderId);
-    } else if (status == 'failed') {
-        console.log('>> Something went wrong, asset could not be copied.');
-    } else {
-        console.log('>> Copying in progress, please try again in a few seconds.');
     }
 }, (error) => {
     console.error('Request failed or not found: ', error);
