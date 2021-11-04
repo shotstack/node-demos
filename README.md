@@ -20,17 +20,31 @@
 
 - **picture-in-picture.js** -
     Layer a small foreground clip, using position and scale, over a fullscreen background clip, to create a picture 
-    in picture effect. 
+    in picture effect.
+
+- **merge.js** -
+    Merge data in to a video using merge fields.
+
+- **transform.js** -
+    Apply transformations (rotate, skew and flip) to a video clip.
     
 ### Image examples
 
 - **border.js** -
     Add a border frame around a background photo.
 
+- **gif.js** -
+    Create an animated gif that plays once.
+
 ### Polling example
 
 - **status.js** -
     Shows the status of a render task and the output video URL. Run this after running one of the render examples.
+
+### Probe example
+
+- **probe.js** -
+    Fetch metadata for any media asset on the internet such as width, height, duration, etc...
 
 ### Asset management examples
 
