@@ -76,8 +76,6 @@ edit
     .setTimeline(timeline)
     .setOutput(output);
 
-    console.log(JSON.stringify(edit));
-
 api.postRender(edit).then((data) => {
     let message = data.response.message;
     let id = data.response.id

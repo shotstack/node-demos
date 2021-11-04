@@ -5,6 +5,11 @@ const DeveloperKey = defaultClient.authentications['DeveloperKey'];
 const api = new Shotstack.EditApi();
 const id = process.argv[2];
 
+if (!id) {
+  console.log(">> Please provide the UUID of the render task (i.e. php examples/status.php 2abd5c11-0f3d-4c6d-ba20-235fc9b8e8b7)\n");
+  process.exit(1);
+}
+
 let apiUrl = 'https://api.shotstack.io/stage';
 
 if (!process.env.SHOTSTACK_KEY) {
@@ -19,7 +24,7 @@ if (process.env.SHOTSTACK_HOST) {
 defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SHOTSTACK_KEY;
 
-api.getRender(id).then((data) => {
+api.getRender(id, { data: false, merged: true }).then((data) => {
     let status = data.response.status;
     let url = data.response.url;
 
