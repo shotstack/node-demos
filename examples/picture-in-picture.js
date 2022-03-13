@@ -23,7 +23,7 @@ const ONE_FRAME = 1/25;
 // Setup the main background clip
 let backgroundAsset = new Shotstack.VideoAsset;
 backgroundAsset
-    .setSrc('https://shotstack-pubic-files.s3-ap-southeast-2.amazonaws.com/examples/picture-in-picture/code.mp4');
+    .setSrc('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/examples/picture-in-picture/code.mp4');
 
 let backgroundClip = new Shotstack.Clip;
 backgroundClip
@@ -39,7 +39,7 @@ backgroundTrack
 // 1. Full screen
 let overlayAsset1 = new Shotstack.VideoAsset;
 overlayAsset1
-    .setSrc('https://shotstack-pubic-files.s3-ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
+    .setSrc('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
     .setVolume(1);
 
 let overlayClip1 = new Shotstack.Clip;
@@ -51,7 +51,7 @@ overlayClip1
 // 2. Bottom right picture in picture after 5 seconds
 let overlayAsset2 = new Shotstack.VideoAsset;
 overlayAsset2
-    .setSrc('https://shotstack-pubic-files.s3-ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
+    .setSrc('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
     .setVolume(1)
     .setTrim(5);
 
@@ -66,7 +66,7 @@ overlayClip2
 // 3. Top right picture in picture after 10 seconds
 let overlayAsset3 = new Shotstack.VideoAsset;
 overlayAsset3
-    .setSrc('https://shotstack-pubic-files.s3-ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
+    .setSrc('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
     .setVolume(1)
     .setTrim(10);
 
@@ -81,7 +81,7 @@ overlayClip3
 // 4. Small bottom right picture in picture after 12.5 seconds
 let overlayAsset4 = new Shotstack.VideoAsset;
 overlayAsset4
-    .setSrc('https://shotstack-pubic-files.s3-ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
+    .setSrc('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/examples/picture-in-picture/commentary.mp4')
     .setVolume(1)
     .setTrim(12.5);
 
