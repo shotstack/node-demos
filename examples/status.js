@@ -6,7 +6,7 @@ const api = new Shotstack.EditApi();
 const id = process.argv[2];
 
 if (!id) {
-  console.log(">> Please provide the UUID of the render task (i.e. php examples/status.php 2abd5c11-0f3d-4c6d-ba20-235fc9b8e8b7)\n");
+  console.log(">> Please provide the UUID of the render task (i.e. node examples/status.js 2abd5c11-0f3d-4c6d-ba20-235fc9b8e8b7)\n");
   process.exit(1);
 }
 

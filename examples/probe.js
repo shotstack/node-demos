@@ -6,7 +6,7 @@ const api = new Shotstack.EditApi();
 const url = process.argv[2];
 
 if (!url) {
-    console.log(">> Please provide the URL to a media file to inspect (i.e. php examples/probe.php https://github.com/shotstack/test-media/raw/main/captioning/scott-ko.mp4)\n");
+    console.log(">> Please provide the URL to a media file to inspect (i.e. node examples/probe.js https://github.com/shotstack/test-media/raw/main/captioning/scott-ko.mp4)\n");
     process.exit(1);
 }
 
