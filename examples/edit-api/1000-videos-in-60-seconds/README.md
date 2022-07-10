@@ -1,3 +1,4 @@
+# How I built 1,000 personalised videos in 60 seconds
 In this article, we will show you how to build 1,000 personalized birthday videos for 1,000 different people. This is
 close to impossible to do using traditional video editors such as Adobe [Premiere](https://www.adobe.com/au/products/premiere.html)
 and After [Effects](https://www.adobe.com/au/products/aftereffects.html), with specialized personalization agencies
@@ -9,9 +10,9 @@ through small changes to a JSON file.
 With our API capable of rendering hundreds videos concurrently in the cloud, **the ability to work at enormous scale
 allows you to render all 1,000 of our videos in less than 30 seconds.**
 
-### Getting started
+# Getting started
 
-#### Shotstack API key
+## Shotstack API key
 
 The speed behind this example was made possible through a Shotstack Enterprise account, but you can sign up for a
 [free account](https://dashboard.shotstack.io/register) that provides you with all the same functionalities
@@ -20,17 +21,17 @@ and allows you to test the service.
 The example in this article has some throttling built in, but you'll have to be aware of the usage limits of 1 request
 per second, and 2,000 requests per month for free accounts if you plan to try this out yourself.
 
-#### Personalised videos using Node.js
+## Personalised videos using Node.js
 
 I'll use vanilla javascript through [Node.js](https://nodejs.org/en/) to build the application, but feel free to use what
 works for you. We have SDKs available for [PHP](https://github.com/shotstack/shotstack-sdk-php), [Node](https://github.com/shotstack/shotstack-sdk-node), and [Ruby](https://github.com/shotstack/shotstack-sdk-ruby).
 
-##### Personalised videos using Integromat
+### Personalised videos using Integromat
 
 You can also use our [Integromat app](https://www.integromat.com/en/integrations/shotstack?pc=shotstack) to achieve
 the same result without using any code at all.
 
-### Choosing our footage
+# Choosing our footage
 
 I built a promotional video which we'll use to offer our fictitious customers a discount on their birthday. This video has
 been completely built within Shotstack, but you can achieve the same result using a pre-rendered video built in a video editing
@@ -187,13 +188,13 @@ specific HTML assets where our personalised content should go:
 }
 ```
 
-### Personalise videos using a spreadsheet
+# Personalise videos using a spreadsheet
 
 For our customers we'll use a dataset with information on about 1,000 concocted users. This will include their name, age, fake age,
 their discount code, and the discount amount. We will then use the data in this CSV to fill in the JSON template and send it to the
 API. You can find the complete [spreadsheet](https://gist.github.com/derkzomer/154768b3c6f4a84e6fd71a31b53e92ce) on GitHub.
 
-### Create videos from CSV data
+# Create videos from CSV data
 
 The only thing you need to do now is iterate over the CSV file, add those personalised datapoints to the JSON template, and send
 each video edit to the API for rendering.
@@ -275,7 +276,7 @@ fs.createReadStream(USER_LIST)
   });
 ```
 
-### The result - 1000 personalised videos
+# The result - 1000 personalised videos
 
 Once you run the script you'll see all thousand personalised templates be sent through to the API for rendering, and all output
 data will end up in a CSV file called video-list.csv, which will include the urls for each individual video.
@@ -287,7 +288,7 @@ The below list contains the first 20 videos, but if you don't believe me you can
 
 <script src="https://gist.github.com/derkzomer/a7e3d29d1bbdd2a02b5d79c62321315f.js"></script>
 
-### So what next?
+# So what next?
 
 Personalised marketing [has shown](https://www.forbes.com/sites/jiawertz/2018/08/31/personalized-video-content-can-be-the-marketing-breakthrough-brands-need/?sh=3974fbf32e6f)
 to lead to higher email open rates, higher click-through rates, better engagement, and provides you with a new way to build relationships with your audience.
