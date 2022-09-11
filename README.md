@@ -27,6 +27,9 @@
 
 - **transform.js** -
     Apply transformations (rotate, skew and flip) to a video clip.
+
+- **progress.js** -
+    Animate and overlay a progress bar on to a video using an HTML asset.
     
 ### Image examples
 
@@ -54,8 +57,11 @@
 - **serve-api/assetId.js** -
     Fetch an individual asset by asset ID.
 
-- **serve-api/destination.js** -
+- **destination.js** -
     Shows how to exclude a render from being sent to the Shotstack hosting destination.
+
+- **mux.js** -
+    Sends a rendered video to Mux hosting and excludes it from Shotstack. Requires a Mux account.
 
 ### Installation
 
