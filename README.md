@@ -30,6 +30,9 @@
 
 - **progress.js** -
     Animate and overlay a progress bar on to a video using an HTML asset.
+
+- **frames.js** -
+    A frame accurate counter, useful for testing frame accuracy.
     
 ### Image examples
 
