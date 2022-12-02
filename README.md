@@ -33,6 +33,9 @@
 
 - **frames.js** -
     A frame accurate counter, useful for testing frame accuracy.
+
+- **countdown.js** -
+    A simple 10 second countdown video, variables can be adjusted to created different speeds and counts.
     
 ### Image examples
 
