@@ -48,6 +48,14 @@
 - **gif.js** -
     Create an animated gif that plays once.
 
+### Template examples
+
+- **templates/create.js**
+    Save an edit as a re-usable template with placeholders.
+
+- **templates/render.js**
+    Render a template using merge fields to replace placeholders.
+
 ### Polling example
 
 - **status.js** -
