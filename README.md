@@ -25,6 +25,9 @@
 - **merge.js** -
     Merge data in to a video using merge fields.
 
+- **merge-trim.js** -
+    Trim a video using merge fields. Replace the URL, trim and length using placeholders and merge field values.
+
 - **transform.js** -
     Apply transformations (rotate, skew and flip) to a video clip.
 
