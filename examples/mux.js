@@ -1,7 +1,7 @@
 /**
- * Mux Demo.
+ * Mux Destinations Demo
  * Ensure Mux credentials are configured in the Shotstack dashboard before running this demo.
- * See: https://shotstack.io/learn/mux-destination-integration/
+ * See: https://shotstack.io/docs/guide/serving-assets/destinations/mux
  */
 const Shotstack = require('shotstack-sdk');
 
@@ -73,7 +73,7 @@ let muxDestination = new Shotstack.MuxDestination;
 let muxOptions = new Shotstack.MuxDestinationOptions;
 
 muxOptions.setPlaybackPolicy(['public']);
-muxDestination.setOptions(muxOptions)
+muxDestination.setOptions(muxOptions);
 
 let output = new Shotstack.Output;
 output
@@ -81,7 +81,7 @@ output
     .setResolution('sd')
     .setDestinations([
         shotstackDestination,
-        muxDestination
+        muxDestination,
     ]);
 
 let edit = new Shotstack.Edit;
