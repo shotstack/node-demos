@@ -56,6 +56,12 @@
 - **templates/render.js**
     Render a template using merge fields to replace placeholders.
 
+- **templates/templates.js**
+    Get a list of all templates.
+
+- **templates/templates.js**
+    Get an individual template by template ID.
+
 ### Polling example
 
 - **status.js** -
