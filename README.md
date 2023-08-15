@@ -80,6 +80,10 @@
 - **mux.js** -
     Sends a rendered video to Mux hosting and excludes it from Shotstack. Requires a Mux account.
 
+- **s3.js** -
+    Sends a rendered video to an AWS S3 bucket and excludes it from Shotstack. Requires an AWS account and correctly
+    configured bucket (see: https://community.shotstack.io/t/s3-permission-issue/397).
+
 ### Installation
 
 Install the required dependencies including the [Shotstack Node SDK](https://www.npmjs.com/package/shotstack-sdk)
