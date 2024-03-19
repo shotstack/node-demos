@@ -39,6 +39,9 @@
 
 - **countdown.js** -
     A simple 10 second countdown video, variables can be adjusted to created different speeds and counts.
+
+- **stitch.js** -
+    Stitch together multiple video clips into a single video.
     
 ### Image examples
 
