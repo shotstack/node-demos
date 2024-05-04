@@ -19,15 +19,13 @@ defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SHOTSTACK_KEY;
 
 const VIDEO_DURATION = 10;
-const COUNTER_START = 10;
-const COUNTER_DISPLAY_DURATION = VIDEO_DURATION / COUNTER_START;
-const FRAMES_PER_SECOND = 25;
-const SINGLE_FRAME_DURATION = 1 / FRAMES_PER_SECOND;
+const COUNTER_START = 1;
+const COUNTER_DISPLAY_DURATION = 1;
 
 const counterArray = [];
 
-for (let counter = COUNTER_START; counter >= 0; counter--) {
-    const start = VIDEO_DURATION - counter * COUNTER_DISPLAY_DURATION;
+for (let counter = COUNTER_START; counter <= VIDEO_DURATION; counter++) {
+    const start = counter;
 
     const htmlAsset = new Shotstack.HtmlAsset;
     htmlAsset
@@ -40,7 +38,7 @@ for (let counter = COUNTER_START; counter >= 0; counter--) {
     htmlClip
         .setAsset(htmlAsset)
         .setStart(start)
-        .setLength(COUNTER_DISPLAY_DURATION - SINGLE_FRAME_DURATION);
+        .setLength(COUNTER_DISPLAY_DURATION);
 
     counterArray.push(htmlClip);
 }
@@ -57,8 +55,7 @@ timeline
 const output = new Shotstack.Output;
 output
     .setFormat('mp4')
-    .setResolution('hd')
-    .setFps(FRAMES_PER_SECOND);
+    .setResolution('hd');
 
 const edit = new Shotstack.Edit;
 edit
