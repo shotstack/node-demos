@@ -9,6 +9,6 @@
   "author": "Shotstack",
   "license": "MIT",
   "dependencies": {
-    "shotstack-sdk": "0.2.2"
+    "shotstack-sdk": "^0.2.2"
   }
 }
