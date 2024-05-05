@@ -2,9 +2,9 @@ const Shotstack = require('shotstack-sdk');
 
 const defaultClient = Shotstack.ApiClient.instance;
 const DeveloperKey = defaultClient.authentications['DeveloperKey'];
-const api = new Shotstack.CreateApi();
+const api = new Shotstack.IngestApi();
 
-const apiUrlBase = 'https://api.shotstack.io/create/';
+const apiUrlBase = 'https://api.shotstack.io/ingest/';
 let apiUrl = apiUrlBase + 'stage';
 
 if (!process.env.SHOTSTACK_KEY) {
@@ -23,23 +23,29 @@ if (process.env.SHOTSTACK_ENV) {
 defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SHOTSTACK_KEY;
 
-const textToImage = new Shotstack.ShotstackTextToImageOptions;
-textToImage
-    .setPrompt('A realistic photo of the planet Mars with a black outer space background')
-    .setWidth(1024)
-    .setHeight(1024);
+const size = new Shotstack.Size;
+size
+    .setHeight(720);
 
-const generatedAsset = new Shotstack.ShotstackGeneratedAsset;
-generatedAsset
-    .setOptions(textToImage);
+const rendition = new Shotstack.Rendition;
+rendition
+    .setSize(size);
 
-api.postGenerateAsset(generatedAsset).then((asset) => {
-    const status = asset.data.attributes.status;
-    const id = asset.data.id
+const outputs = new Shotstack.Outputs;
+outputs
+    .setRenditions([rendition]);
+
+const source = new Shotstack.Source;
+source
+    .setUrl('https://shotstack-assets.s3.ap-southeast-2.amazonaws.com/footage/cliffs-sunset.mp4')
+    .setOutputs(outputs);
+
+api.postSource(source).then((source) => {
+    const id = source.data.id
     
-    console.log(`Request '${status}' with id: ${id}\n`);
+    console.log(`Request 'queued' with id: ${id}\n`);
     console.log('>> Now check the progress by running:');
-    console.log(`>> node examples/create-api/status.js ${id}`);
+    console.log(`>> node examples/ingest-api/status.js ${id}`);
 }, (error) => {
     console.error('Request failed: ', error);
     process.exit(1);

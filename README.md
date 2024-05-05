@@ -101,6 +101,10 @@
 - **create-api/text-to-image.js** -
     Generate an image using the Shotstack text-to-image provider.
 
+### Ingest and transformation examples
+- **ingest-api/resize-video.js** -
+    Resize a video from 1080p to 720p resolution.
+
 ### Installation
 
 Install the required dependencies including the [Shotstack Node SDK](https://www.npmjs.com/package/shotstack-sdk)
@@ -180,4 +184,21 @@ To check the status of a create task, run the `status.js` example with the asset
 
 ```bash
 node examples/create-api/status.js 01gx3-2827k-dxmpz-x5n32-chw4oq
+```
+
+#### Ingesting and transforming/transcoding assets (Ingest API)
+
+To ingest and transform/transcode assets run the examples in the [examples/ingest-api](./examples/ingest-api/)
+directory.
+
+To resize a video from 1080p to 720p resolution:
+
+```bash
+node examples/ingest-api/resize-video.js
+```
+
+To check the status of an ingest task, run the `status.js` example with the ingest ID:
+
+```bash
+node examples/ingest-api/status.js zzy7wxvy-1h1e-vt4j-kn0y-3qn7kj1hocpw
 ```

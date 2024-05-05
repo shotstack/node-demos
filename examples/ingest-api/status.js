@@ -2,15 +2,15 @@ const Shotstack = require('shotstack-sdk');
 
 const defaultClient = Shotstack.ApiClient.instance;
 const DeveloperKey = defaultClient.authentications['DeveloperKey'];
-const api = new Shotstack.CreateApi();
+const api = new Shotstack.IngestApi();
 
-const apiUrlBase = 'https://api.shotstack.io/create/';
+const apiUrlBase = 'https://api.shotstack.io/ingest/';
 let apiUrl = apiUrlBase + 'stage';
 
 const id = process.argv[2];
 
 if (!id) {
-  console.log(">> Please provide the UUID of the asset generation task (i.e. node examples/create-api/status.js 01gx3-2827k-dxmpz-x5n32-chw4oq)\n");
+  console.log(">> Please provide the UUID of the ingest task (i.e. node examples/ingest-api/status.js zzy7wxvy-1h1e-vt4j-kn0y-3qn7kj1hocpw)\n");
   process.exit(1);
 }
 
@@ -30,13 +30,14 @@ if (process.env.SHOTSTACK_ENV) {
 defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SHOTSTACK_KEY;
 
-api.getGeneratedAsset(id).then((asset) => {
-    const status = asset.data.attributes.status;
+api.getSource(id).then((source) => {
+    const status = source.data.attributes.outputs.renditions[0].status;
 
     console.log(`Status: '${status}'\n`);
 
-    if (status == 'done') {
-        console.log(`>> Asset URL: ${asset.data.attributes.url}`);
+    if (status == 'ready') {
+        console.log(`>> Source URL: ${source.data.attributes.source}`);
+        console.log(`>> Rendition URL: ${source.data.attributes.outputs.renditions[0].url}`);
     } else if (status == 'failed') {
         console.log('>> Something went wrong, processing has terminated and will not continue.');
     } else {
