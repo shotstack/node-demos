@@ -78,7 +78,7 @@
 - **probe.js** -
     Fetch metadata for any media asset on the internet such as width, height, duration, etc...
 
-### Asset management examples
+### Storage and hosting examples
 
 - **serve-api/renderId.js** -
     Fetch all assets associated with a render ID. Includes video or image and thumbnail and poster.
@@ -95,6 +95,11 @@
 - **s3.js** -
     Sends a rendered video to an AWS S3 bucket and excludes it from Shotstack. Requires an AWS account and correctly
     configured bucket (see: https://community.shotstack.io/t/s3-permission-issue/397).
+
+### Generative AI examples
+
+- **create-api/text-to-image.js** -
+    Generate an image using the Shotstack text-to-image provider.
 
 ### Installation
 
@@ -126,28 +131,28 @@ Shotstack web site.
 The examples directory includes a number of examples demonstrating the capabilities of the 
 Shotstack API.
 
-#### Rendering
+#### Video editing (Edit API)
 
-To run a rendering/editing example run the examples at the root of the examples folder, e.g. to run the images video 
-example:
+To run a rendering/editing example run the examples at the root of the examples folder.
+
+To run the images video example:
 
 ```bash
 node examples/images.js
 ```
 
-#### Polling
-
-To check the status of a render, similar to polling run the `status.js` example with the render ID, e.g.:
+To check the status of a render, run the `status.js` example with the render ID:
 
 ```bash
 node examples/status.js 8b844085-779c-4c3a-b52f-d79deca2a960
 ```
 
-#### Asset management
+#### Storing and hosting assets (Serve API)
 
 To look up assets hosted by Shotstack run the examples in the [examples/serve-api](./examples/serve-api/) directory.
 
 Find assets by render ID:
+
 ```bash
 node examples/serve-api/renderId.js 8b844085-779c-4c3a-b52f-d79deca2a960
 ```
@@ -155,6 +160,24 @@ node examples/serve-api/renderId.js 8b844085-779c-4c3a-b52f-d79deca2a960
 or 
 
 Find an asset by asset ID:
+
 ```bash
 node examples/serve-api/assetId.js 3f446298-779c-8c8c-f253-900c1627b776
+```
+
+#### Generating assets using AI (Create API)
+
+To create assets using Generative AI providers run the examples in the [examples/create-api](./examples/create-api/)
+directory.
+
+To generate an image using the Shotstack text-to-image provider:
+
+```bash
+node examples/create-api/text-to-image.js
+```
+
+To check the status of a create task, run the `status.js` example with the asset ID:
+
+```bash
+node examples/create-api/status.js 01gx3-2827k-dxmpz-x5n32-chw4oq
 ```
