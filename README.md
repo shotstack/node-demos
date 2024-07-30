@@ -1,5 +1,7 @@
 # Shotstack Node Examples
 
+## Examples
+
 ### Video examples
 
 - **text.js** -
@@ -54,6 +56,14 @@
 - **gif.js** -
     Create an animated gif that plays once.
 
+### Smart clip examples
+
+- **videos-auto** -
+    Automatically sequence a series of video clips so that they play one after another.
+
+- **images-auto** -
+    Automatically sequence a series of images so that they display one after another.
+
 ### Template examples
 
 - **templates/create.js**
@@ -105,7 +115,7 @@
 - **ingest-api/resize-video.js** -
     Resize a video from 1080p to 720p resolution.
 
-### Installation
+## Installation
 
 Install the required dependencies including the [Shotstack Node SDK](https://www.npmjs.com/package/shotstack-sdk)
 
@@ -113,7 +123,7 @@ Install the required dependencies including the [Shotstack Node SDK](https://www
 npm install
 ```
 
-### Set your API key
+## Set your API key
 
 The demos use the **staging** endpoint by default so use your provided **staging** key:
 
@@ -130,12 +140,12 @@ set SHOTSTACK_KEY=your_key_here
 You can [get an API key](http://shotstack.io/?utm_source=github&utm_medium=demos&utm_campaign=node_sdk) via the 
 Shotstack web site.
 
-### Run an example
+## Run an example
 
 The examples directory includes a number of examples demonstrating the capabilities of the 
 Shotstack API.
 
-#### Video editing (Edit API)
+### Video editing (Edit API)
 
 To run a rendering/editing example run the examples at the root of the examples folder.
 
@@ -151,7 +161,7 @@ To check the status of a render, run the `status.js` example with the render ID:
 node examples/status.js 8b844085-779c-4c3a-b52f-d79deca2a960
 ```
 
-#### Storing and hosting assets (Serve API)
+### Storing and hosting assets (Serve API)
 
 To look up assets hosted by Shotstack run the examples in the [examples/serve-api](./examples/serve-api/) directory.
 
@@ -169,7 +179,7 @@ Find an asset by asset ID:
 node examples/serve-api/assetId.js 3f446298-779c-8c8c-f253-900c1627b776
 ```
 
-#### Generating assets using AI (Create API)
+### Generating assets using AI (Create API)
 
 To create assets using Generative AI providers run the examples in the [examples/create-api](./examples/create-api/)
 directory.
@@ -186,7 +196,7 @@ To check the status of a create task, run the `status.js` example with the asset
 node examples/create-api/status.js 01gx3-2827k-dxmpz-x5n32-chw4oq
 ```
 
-#### Ingesting and transforming/transcoding assets (Ingest API)
+### Ingesting and transforming/transcoding assets (Ingest API)
 
 To ingest and transform/transcode assets run the examples in the [examples/ingest-api](./examples/ingest-api/)
 directory.
